@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: svc-counter
+  labels:
+    name: counter-nodeport-svc
+spec:
+  type: NodePort
+  ports:
+    - port: 8080
+      targetPort: 8080
+      name: http
+      nodePort: 30180
+  selector:
+    app: counter
