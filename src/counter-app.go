@@ -259,30 +259,3 @@ func main() {
 		log.Printf("HTTP server shut down")
 	}
 }
-
-/*
-useful commands for the demo:
-----------------------------
-
-netstat -ano -p tcp | grep -i 8080
-
-kubectl create configmap etcd-config --from-literal=endpoints="http://etcd0:2379,http://etcd1:2379,http://etcd2:2379"
-or if you have a single etcd node
-kubectl create configmap etcd-config --from-literal=endpoints="http://etcd0:2379"
-
-
-kubectl delete -f config/counter.yaml
-kubectl delete -f config/counter-deploy.yaml
-docker build . -t akanso/counter:latest
-docker push  akanso/counter:latest
-kubectl create -f config/counter.yaml
-kubectl create -f config/counter-deploy.yaml
-sleep 5
-for i in {1..6}; do  curl 192.168.10.2:30180; done
-kubectl logs -f counter
-
-
-kubectl exec -ti etcd0 -- nslookup etcd1
-curl 192.168.10.2:30180
-
-*/
