@@ -221,7 +221,6 @@ Use localhost or the node ip address of any of your k8s cluster worker nodes
 ```bash
 for i in {1..6}; do  curl localhost:30180/increment; echo; done
 {"content":"count value = 13","message":"Status OK"}
-{"content":"count value = 13","message":"Status OK"}
 {"content":"count value = 14","message":"Status OK"}
 {"content":"count value = 15","message":"Status OK"}
 {"content":"count value = 16","message":"Status OK"}
